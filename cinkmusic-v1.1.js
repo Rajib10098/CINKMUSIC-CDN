@@ -124,7 +124,8 @@ musicDownlaodBtn.addEventListener("click",function(){
     musicDownlaodBtn.style.animation ="download-btn 0.5s";
     musicDownlaodBtn.style.animationIterationCount ="5";
     animationUndoX = 0;
-    downloadSongLink.click();
+    // downloadSongLink.click();
+    location.href = music.src;
 })
 
 
