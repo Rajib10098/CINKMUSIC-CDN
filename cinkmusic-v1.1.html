@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="cinkmusic-v1.1.css">
+</head>
+
+<body>
+    
+    <div class="flex-container">
+        
+        <div class="image-container">
+            <img  id="music-image" src="image-1.jpg" alt="">
+        </div>
+
+        <div class="seek-container">
+            <div class="seek-bottom-bar">
+              <div id="seek-slider">
+
+              </div>
+              <div class="seek-time">
+                  <span id="currentime">00:00</span>
+                  <span id="tottall-duration">00:00</span>
+              </div>
+            </div>
+        </div>
+
+        <div class="play-pause-btn-container">
+            <button id="play-pause-btn">
+                <span id="play-icon">
+                    <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 25.0 25.0"
+                    version="1.1"
+                    id="SVGRoot"
+                    sodipodi:docname="New 25 px play icons.svg"
+                    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:svg="http://www.w3.org/2000/svg">
+                   <sodipodi:namedview
+                      id="namedview836"
+                      pagecolor="#ffffff"
+                      bordercolor="#666666"
+                      borderopacity="1.0"
+                      inkscape:pageshadow="2"
+                      inkscape:pageopacity="0.0"
+                      inkscape:pagecheckerboard="0"
+                      inkscape:document-units="px"
+                      showgrid="true"
+                      inkscape:zoom="6.5190874"
+                      inkscape:cx="28.684997"
+                      inkscape:cy="13.268728"
+                      inkscape:window-width="1920"
+                      inkscape:window-height="1001"
+                      inkscape:window-x="-9"
+                      inkscape:window-y="-9"
+                      inkscape:window-maximized="1"
+                      inkscape:current-layer="layer1"
+                      showguides="false"
+                      inkscape:snap-grids="true"
+                      inkscape:snap-page="false"
+                      inkscape:snap-to-guides="false"
+                      inkscape:snap-object-midpoints="false">
+                     <inkscape:grid
+                        type="xygrid"
+                        id="grid906" />
+                   </sodipodi:namedview>
+                   <defs
+                      id="defs831" />
+                   <g
+                      inkscape:label="Layer 1"
+                      inkscape:groupmode="layer"
+                      id="play-svg-icon">
+                     <path
+                        d="M 7.1419855,23.999969 A 2.2106125,2.2106125 0 0 1 6.0482399,23.708091 C 5.2982449,23.283097 4.832,22.458104 4.832,21.562482 v -18.1249 c 0,-0.8981177 0.4662449,-1.7206142 1.2162399,-2.1456091 A 2.1956126,2.1956126 0 0 1 8.28386,1.3201249 l 15.490534,9.2724471 a 2.2499873,2.2499873 0 0 1 0,3.81248 L 8.2813567,23.679999 A 2.2187375,2.2187375 0 0 1 7.1419855,24 Z"
+                        id="play-svg-path"></path>
+                        
+                   </g>
+                 </svg>
+                </span>
+                <span id="pause-icon">
+                    <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 25.0 25.0"
+                    version="1.1"
+                    id="SVGRoot"
+                    sodipodi:docname="New 25 px pause icons.svg"
+                    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:svg="http://www.w3.org/2000/svg">
+                   <sodipodi:namedview
+                      id="pause-btn-icon"
+                      pagecolor="#ffffff"
+                      bordercolor="#666666"
+                      borderopacity="1.0"
+                      inkscape:pageshadow="2"
+                      inkscape:pageopacity="0.0"
+                      inkscape:pagecheckerboard="0"
+                      inkscape:document-units="px"
+                      showgrid="true"
+                      inkscape:zoom="6.5190874"
+                      inkscape:cx="28.684997"
+                      inkscape:cy="13.268728"
+                      inkscape:window-width="1920"
+                      inkscape:window-height="1001"
+                      inkscape:window-x="-9"
+                      inkscape:window-y="-9"
+                      inkscape:window-maximized="1"
+                      inkscape:current-layer="layer1"
+                      showguides="false"
+                      inkscape:snap-grids="true"
+                      inkscape:snap-page="false"
+                      inkscape:snap-to-guides="false"
+                      inkscape:snap-object-midpoints="false">
+                     <inkscape:grid
+                        type="xygrid"
+                        id="grid906" />
+                   </sodipodi:namedview>
+                   <defs
+                      id="defs831" />
+                   <g
+                      inkscape:label="Layer 1"
+                      inkscape:groupmode="layer"
+                      id="pause-svg-icon">
+                     <path
+                        id="pause-svg-path"
+                        
+                        d="M 4,0.5 C 3.723,0.5 3.5,0.723 3.5,1 v 23 c 0,0.277 0.223,0.5 0.5,0.5 h 6 c 0.277,0 0.5,-0.223 0.5,-0.5 V 1 C 10.5,0.723 10.277,0.5 10,0.5 Z m 11,0 c -0.277,0 -0.5,0.223 -0.5,0.5 v 23 c 0,0.277 0.223,0.5 0.5,0.5 h 6 c 0.277,0 0.5,-0.223 0.5,-0.5 V 1 C 21.5,0.723 21.277,0.5 21,0.5 Z" />
+                   </g>
+                 </svg>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    
+    <div class="center-music-control-container">
+        <div class="music-control-btns">
+            <button class="song-control-btns" id="skip-left-btn">
+                <span id="left-skip-icon">
+                    <svg width="100%" height="100%" viewBox="0 0 25.0 25.0" version="1.1" id="SVGRoot"
+                        sodipodi:docname="25px left skip.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <sodipodi:namedview id="namedview4567" pagecolor="#ffffff" bordercolor="#666666"
+                            borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0"
+                            inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="true"
+                            inkscape:zoom="20.496745" inkscape:cx="13.953435" inkscape:cy="14.807229"
+                            inkscape:window-width="1920" inkscape:window-height="1001" inkscape:window-x="-9"
+                            inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="layer1">
+                            <inkscape:grid type="xygrid" id="grid4637" />
+                        </sodipodi:namedview>
+                        <defs id="defs4562" />
+                        <g id="skip-left-svg-icon">
+
+                            <path
+                                d="M 12.100499,0.38465232 A 12.131179,12.131179 0 0 0 3.1962017,4.5545742 C 2.6917118,4.2680626 2.3014618,4.0518305 2.2899518,4.0584805 c -0.03593,0.020745 -0.03594,4.1277094 0,4.1484374 0.03593,0.020742 3.5937349,-2.0327427 3.5937499,-2.0742187 -10e-7,-0.012967 -0.362996,-0.2304227 -0.841797,-0.5117187 l 0.01563,0.00391 a 10.000026,10.000026 0 0 1 9.8300743,-2.78516 10.000026,10.000026 0 0 1 7.072264,12.2480475 l 2.058594,0.552734 A 12.131179,12.131179 0 0 0 15.440343,0.7811367 12.131179,12.131179 0 0 0 12.100499,0.38465232 Z"
+                                id="path853" />
+                        </g>
+                    </svg>
+                </span>
+                <span id="left-skip-icon-number">
+                    <svg width="100%" height="100%" viewBox="0 0 25.0 25.0" version="1.1" id="SVGRoot"
+                        sodipodi:docname="25px repeat 1.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <sodipodi:namedview id="namedview4567" pagecolor="#ffffff" bordercolor="#666666"
+                            borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0"
+                            inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="true"
+                            inkscape:zoom="28.986775" inkscape:cx="18.698182" inkscape:cy="7.7104128"
+                            inkscape:window-width="1920" inkscape:window-height="1001" inkscape:window-x="-9"
+                            inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="layer1">
+                            <inkscape:grid type="xygrid" id="grid4637" />
+                        </sodipodi:namedview>
+                        <defs id="defs4562" />
+                        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="skip-left-svg-number">
+
+                            <text xml:space="preserve"
+                                style="font-size:17.5115px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:none;stroke-width:0.729644"
+                                x="7.5748906" y="18.71624" id="text24298">
+                                <tspan sodipodi:role="line" id="text-left-number" x="7.5748906" y="18.71624">8</tspan>
+                            </text>
+                        </g>
+                    </svg>
+                </span>
+            </button>
+
+            <button class="song-control-btns" id="repeat-btn">
+                <span id="repeat-music-icon">
+                    <svg width="100%" height="100%" viewBox="0 0 25.0 25.0" version="1.1" id="SVGRoot"
+                        sodipodi:docname="25px right skip.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <sodipodi:namedview id="namedview4567" pagecolor="#ffffff" bordercolor="#666666"
+                            borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0"
+                            inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="true"
+                            inkscape:zoom="7.2466938" inkscape:cx="1.1039517" inkscape:cy="18.560188"
+                            inkscape:window-width="1920" inkscape:window-height="1001" inkscape:window-x="-9"
+                            inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="layer1">
+                            <inkscape:grid type="xygrid" id="grid4637" />
+                        </sodipodi:namedview>
+                        <defs id="defs4562" />
+                        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="repeat-svg-icon">
+                            <path id="path853"
+                                d="M 9.3602129,0.78215872 A 12.131179,12.131179 0 0 0 0.78219503,15.639722 a 12.131179,12.131179 0 0 0 2.718e-5,1.02e-4 L 2.840758,15.088241 a 10.000026,10.000026 0 0 1 -2.72e-5,-1.02e-4 10.000026,10.000026 0 0 1 7.0710646,-12.2474464 10.000026,10.000026 0 0 1 9.8310936,2.784088 l 0.01545,-0.00414 c -0.478801,0.281296 -0.841942,0.4993701 -0.841943,0.5123366 1.5e-5,0.041476 3.557046,2.0951481 3.592977,2.0744058 0.03594,-0.020728 0.03589,-4.1279905 -4.5e-5,-4.1487351 -0.01151,-0.00665 -0.402064,0.2101245 -0.906554,0.4966361 A 12.131179,12.131179 0 0 0 9.360209,0.78215975 Z M 22.159271,9.911859 A 10.000026,10.000026 0 0 1 15.088202,22.159306 10.000026,10.000026 0 0 1 5.2651893,19.382395 c 0.4682823,-0.275266 0.8217734,-0.487673 0.8217717,-0.500455 4.5e-6,-0.0415 -3.5571477,-2.095124 -3.5930761,-2.074378 -0.035925,0.02074 -0.035858,4.128089 7.06e-5,4.148831 0.011645,0.0067 0.4053031,-0.212035 0.9132577,-0.500552 A 12.131179,12.131179 0 0 0 15.639785,24.217842 12.131179,12.131179 0 0 0 24.217804,9.3602765 Z" />
+                        </g>
+                    </svg>
+                </span>
+                <span id="repeat-music-icon-one">
+                    <svg width="100%" height="100%" viewBox="0 0 25.0 25.0" version="1.1" id="SVGRoot"
+                        sodipodi:docname="25px repeat 1.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <sodipodi:namedview id="namedview4567" pagecolor="#ffffff" bordercolor="#666666"
+                            borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0"
+                            inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="true"
+                            inkscape:zoom="14.493388" inkscape:cx="16.283287" inkscape:cy="18.594686"
+                            inkscape:window-width="1920" inkscape:window-height="1001" inkscape:window-x="-9"
+                            inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="layer1">
+                            <inkscape:grid type="xygrid" id="grid4637" />
+                        </sodipodi:namedview>
+                        <defs id="defs4562" />
+
+                        <g aria-label="15 " id="repeat-one-number">
+
+                            <path
+                                style="font-size:17.884px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:none;stroke:none;stroke-width:0.745156"
+                                d="M 11.712891,6.1523438 9.9042969,7.3573923 V 9.1991437 L 11.712891,8.0897961 V 18.847344 h 1.78125 V 6.1523438 Z"
+                                id="path844" />
+                        </g>
+                    </svg>
+                </span>
+            </button>
+
+            <button class="song-control-btns" id="music-download-btn">
+                <span id="download-circle-icon">
+                    <svg width="100%" height="100%" viewBox="0 0 25.0 25.0" version="1.1" id="SVGRoot"
+                        sodipodi:docname="25px download button.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <sodipodi:namedview id="namedview836" pagecolor="#ffffff" bordercolor="#666666"
+                            borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0"
+                            inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="true"
+                            inkscape:zoom="16" inkscape:cx="12.1875" inkscape:cy="15.34375" inkscape:window-width="1920"
+                            inkscape:window-height="1001" inkscape:window-x="-9" inkscape:window-y="-9"
+                            inkscape:window-maximized="1" inkscape:current-layer="layer1" inkscape:snap-nodes="false">
+                            <inkscape:grid type="xygrid" id="grid906" />
+                        </sodipodi:namedview>
+                        <defs id="defs831">
+
+
+                        </defs>
+                        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="download-circle-svg-icon">
+                            <path
+                                d="M 12.5,0.56249915 C 5.917662,0.56249915 0.56249915,5.9175897 0.56249915,12.5 0.56249915,19.082266 5.917662,24.437501 12.5,24.437501 19.082338,24.437501 24.437501,19.082266 24.437501,12.5 24.437501,5.9175897 19.082338,0.56249915 12.5,0.56249915 Z m 0,21.70454685 c -5.3855492,0 -9.7670461,-4.381497 -9.7670461,-9.767046 0,-5.3855492 4.3814969,-9.7670461 9.7670461,-9.7670461 5.385549,0 9.767046,4.3814969 9.767046,9.7670461 0,5.385549 -4.381497,9.767046 -9.767046,9.767046 z"
+                                id="path1099" />
+                        </g>
+                    </svg>
+                </span>
+
+                <span id="download-arrow-icon">
+                    <svg width="100%" height="100%" viewBox="0 0 25.0 25.0" version="1.1" id="SVGRoot"
+                        sodipodi:docname="25px download button.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <sodipodi:namedview id="namedview836" pagecolor="#ffffff" bordercolor="#666666"
+                            borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0"
+                            inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="true"
+                            inkscape:zoom="16" inkscape:cx="12.1875" inkscape:cy="15.34375" inkscape:window-width="1920"
+                            inkscape:window-height="1001" inkscape:window-x="-9" inkscape:window-y="-9"
+                            inkscape:window-maximized="1" inkscape:current-layer="layer1" inkscape:snap-nodes="false">
+                            <inkscape:grid type="xygrid" id="grid906" />
+                        </sodipodi:namedview>
+                        <defs id="defs831">
+
+                        </defs>
+                        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="download-arrow-svg-icon">
+                            <path
+                                d="M 15.876287,9.7595115 13.585083,12.050499 V 5.9886359 c 0,-0.5994072 -0.485893,-1.0852274 -1.085228,-1.0852274 -0.599335,0 -1.085227,0.4858202 -1.085227,1.0852274 V 12.050499 L 9.123713,9.7595115 c -0.4237451,-0.4237451 -1.110911,-0.4237451 -1.5347285,0 -0.4238175,0.4238895 -0.4238175,1.1109115 0,1.5347285 l 4.1434705,4.14347 c 0.211909,0.211982 0.489654,0.317972 0.767328,0.317972 0.277673,0 0.555492,-0.10599 0.7674,-0.317827 l 4.14376,-4.14347 c 0.423745,-0.423745 0.423818,-1.110911 7.3e-5,-1.5348735 -0.42389,-0.4237451 -1.110984,-0.4237451 -1.534729,0 z"
+                                id="path1101" />
+                        </g>
+                    </svg>
+                </span>
+
+                <span id="download-bar-icon">
+                    <svg width="100%" height="100%" viewBox="0 0 25.0 25.0" version="1.1" id="SVGRoot"
+                        sodipodi:docname="25px download button.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <sodipodi:namedview id="namedview836" pagecolor="#ffffff" bordercolor="#666666"
+                            borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0"
+                            inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="true"
+                            inkscape:zoom="16" inkscape:cx="12.1875" inkscape:cy="15.34375" inkscape:window-width="1920"
+                            inkscape:window-height="1001" inkscape:window-x="-9" inkscape:window-y="-9"
+                            inkscape:window-maximized="1" inkscape:current-layer="layer1" inkscape:snap-nodes="false">
+                            <inkscape:grid type="xygrid" id="grid906" />
+                        </sodipodi:namedview>
+                        <defs id="defs831">
+
+
+                        </defs>
+                        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="download-bar-svg-icon">
+                            <path
+                                d="m 14.670455,17.926137 h -4.34091 c -0.5993346,0 -1.085227,0.48582 -1.085227,1.085227 0,0.599263 0.4858924,1.085227 1.085227,1.085227 h 4.34091 c 0.599335,0 1.085227,-0.485964 1.085227,-1.085227 0,-0.599407 -0.485892,-1.085227 -1.085227,-1.085227 z"
+                                id="path1103" />
+
+                        </g>
+                    </svg>
+                </span>
+            </button>
+
+            <button class="song-control-btns" id="right-skip-btn">
+                <span id="right-skip-icon">
+                    <svg width="100%" height="100%" viewBox="0 0 25.0 25.0" version="1.1" id="SVGRoot"
+                        sodipodi:docname="25px left skip.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <sodipodi:namedview id="namedview4567" pagecolor="#ffffff" bordercolor="#666666"
+                            borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0"
+                            inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="true"
+                            inkscape:zoom="20.496745" inkscape:cx="13.953435" inkscape:cy="14.807229"
+                            inkscape:window-width="1920" inkscape:window-height="1001" inkscape:window-x="-9"
+                            inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="layer1">
+                            <inkscape:grid type="xygrid" id="grid4637" />
+                        </sodipodi:namedview>
+                        <defs id="defs4562" />
+                        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="right-skip-svg-icon">
+
+                            <path
+                                d="m 12.89778,0.38465232 a 12.131179,12.131179 0 0 1 8.904297,4.16992188 c 0.50449,-0.2865116 0.89474,-0.5027437 0.90625,-0.4960937 0.03593,0.020745 0.03594,4.1277094 0,4.1484374 -0.03593,0.020742 -3.593735,-2.0327427 -3.59375,-2.0742187 1e-6,-0.012967 0.362996,-0.2304227 0.841797,-0.5117187 l -0.01563,0.00391 A 10.000026,10.000026 0 0 0 10.11067,2.8397305 10.000026,10.000026 0 0 0 3.0384056,15.087778 l -2.058594,0.552734 A 12.131179,12.131179 0 0 1 9.557936,0.7811367 12.131179,12.131179 0 0 1 12.89778,0.38465232 Z"
+                                id="path853" />
+                        </g>
+                    </svg>
+                </span>
+                <span id="right-skip-number-icon">
+                    <svg width="100%" height="100%" viewBox="0 0 25.0 25.0" version="1.1" id="SVGRoot"
+                        sodipodi:docname="25px 15 second skip.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <sodipodi:namedview id="namedview4567" pagecolor="#ffffff" bordercolor="#666666"
+                            borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0"
+                            inkscape:pagecheckerboard="0" inkscape:document-units="px" showgrid="true"
+                            inkscape:zoom="20.496745" inkscape:cx="8.9770351" inkscape:cy="18.563923"
+                            inkscape:window-width="1920" inkscape:window-height="1001" inkscape:window-x="-9"
+                            inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="layer1">
+                            <inkscape:grid type="xygrid" id="grid4637" />
+                        </sodipodi:namedview>
+                        <defs id="defs4562" />
+                        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+                            <g aria-label="15" id="right-icon-svg-number"
+                                style="font-size:17.7712px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:none;stroke-width:0.740465">
+                                <path id="path7991"
+                                    d="M 8.5615232,6.1269534 6.7666013,7.324219 V 9.1542971 L 8.5615232,8.0527346 V 18.744141 H 10.333008 V 6.1269534 Z m 2.8789068,0 v 6.6464846 h 1.613281 c 0.214041,-0.312384 0.462634,-0.554968 0.746094,-0.728515 0.28346,-0.173547 0.578166,-0.259766 0.884765,-0.259766 0.56692,0 1.003947,0.190462 1.310547,0.572266 0.312384,0.376017 0.46875,0.905272 0.46875,1.58789 v 1.058594 c 0,0.688402 -0.156366,1.223665 -0.46875,1.605469 -0.3066,0.376018 -0.743627,0.564453 -1.310547,0.564453 -0.491716,0 -0.890665,-0.128277 -1.197265,-0.382813 -0.3066,-0.26032 -0.491054,-0.621192 -0.554688,-1.083984 v -0.0098 h -1.771484 v 0.0098 c 0.104128,0.665263 0.310587,1.234623 0.617187,1.708984 0.312384,0.474362 0.713362,0.835234 1.205079,1.083985 0.497501,0.24875 1.064833,0.373046 1.701171,0.373046 0.746252,0 1.385758,-0.150357 1.917969,-0.451171 0.53221,-0.3066 0.937169,-0.747682 1.214844,-1.326172 0.277675,-0.57849 0.416016,-1.276127 0.416016,-2.091797 v -1.058594 c -10e-7,-0.815671 -0.134361,-1.513307 -0.40625,-2.091797 -0.266106,-0.57849 -0.661,-1.017544 -1.181641,-1.318359 -0.514855,-0.300814 -1.136338,-0.451172 -1.865235,-0.451172 -0.283459,0 -0.560141,0.04814 -0.832031,0.146484 -0.27189,0.09834 -0.518455,0.238637 -0.738281,0.417969 V 7.8105471 h 4.660156 V 6.1269534 Z" />
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+            </button>
+
+        </div>
+    </div>
+    <div class="music-title">
+        Title demo for now
+    </div>
+    <div class="music-artist">
+        Title demo for now
+    </div>
+    <div class="center-music-description-container">
+        <div id="music-description-container">
+            <div id="description-btn-container">
+                <button id="description-btn">Close Descripton</button>
+            </div>
+            <div id="descripton-info">
+                <!-- Add music info here -->
+               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio at, architecto porro quibusdam facere molestiae nesciunt odio aspernatur amet, unde error alias minus ducimus repudiandae a, ullam hic minima quos.
+
+               
+            
+            </div>
+        </div>
+    </div>
+     <a id="download-song-link" href="https://download1490.mediafire.com/dn8roxo5nyvg/80rzgpsnvmqu1no/Slynk___Doctor_Momentum%28256kbps%29.mp3"></a>
+    <audio id="music-source" src="song-1.mp3"></audio>
+    <script src="cinkmusic-v1.1.js"></script>
+</body>
+
+</html>
+
