@@ -133,7 +133,7 @@ musicDownlaodBtn.addEventListener("click",function(){
 
 
 
-//  ***********  Timer JS  **********
+//  ***********  Timer JS  ********** 2
 function upadateTimer() {
 
       animationUndoX = animationUndoX + animationUndoY;
