@@ -356,4 +356,5 @@ body {
 }
 .lyrics{
     white-space: pre-line;
+    line-height: 17.5px;
 }
