@@ -213,7 +213,7 @@ body {
     transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.41, 0.41, 0.25, 0.66);
     height: 100%;
-    background-color: #0000006d;
+    background-color: #181818;
 }
 
 #description-btn {
