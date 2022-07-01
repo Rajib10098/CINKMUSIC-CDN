@@ -68,10 +68,23 @@ body {
 /* *** Play Pause btn Css END frome here *** */
 /* seek bar css start  */
 
-.seek-container {
+/* .seek-container {
     display: flex;
     flex-direction: column;
     justify-content: end;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    background-color: #720a0a00;
+} */
+
+/* fix seek bar for chrome mobile */
+
+.seek-container {
+    /* display: flex; */
+    flex-direction: column;
+    /* justify-content: end; */
+    padding-top: 215px;
     width: 250px;
     height: 250px;
     position: absolute;
