@@ -165,3 +165,14 @@ function upadateTimer() {
 }
 
 setInterval(upadateTimer, 200)
+
+
+
+
+
+       let currentDownLink = document.getElementById("music-source").src
+            localStorage.clear()
+            localStorage.setItem("GetLink", `${currentDownLink}`)
+            localStorage.setItem("title", `${document.title}`)
+            localStorage.setItem("Surl", `${document.URL }`)
+            localStorage.setItem("confrom", "true")
