@@ -190,7 +190,7 @@ musicDownlaodBtn.addEventListener("click", function () {
     musicDownlaodBtn.style.animation = "download-btn 0.5s";
     musicDownlaodBtn.style.animationIterationCount = "5";
     animationUndoX = 0;
-    window.location.href ='https://www.google.com/'
+    window.location.href ='https://cinkmusic.blogspot.com/p/nt5ofimxjfa.html'
 
 })
 
