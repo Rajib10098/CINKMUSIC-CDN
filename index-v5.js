@@ -56,11 +56,11 @@ if(localStorage.isMusicPlayed == "true"){
 
 playPause.addEventListener("click", function () {
     if (music.paused == true) {
-        localStorage.setItem("isMusicPlayed", true)
+        //localStorage.setItem("isMusicPlayed", true)
         music.play();
 
     } else {
-        localStorage.setItem("isMusicPlayed", false)
+        //localStorage.setItem("isMusicPlayed", false)
         music.pause();
     }
 })
